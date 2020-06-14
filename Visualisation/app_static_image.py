@@ -30,7 +30,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 
 
-app = dash.Dash(__name__, external_stylesheets=[external_stylesheets],
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets,
                 assets_folder=IMAGE_DATA_DIR,
                 assets_url_path='/')
 
@@ -38,11 +38,17 @@ app.layout = html.Div([
     html.Header(
         html.H1("Flag Similarity Search App")
                 ),
-    dcc.Markdown("Each of the flags available in Wikipedia's "
+    dcc.Markdown("Each of the 200+ flags available in Wikipedia's "
                  "[gallery of sovereign state flags](https://en.wikipedia.org/wiki/Gallery_of_sovereign_state_flags) "
-                 "has been featurised using pre-trained models such as DenseNet201, InceptionV3, ResNet152V2, VGG16, "
-                 "and Xception. The featurisation process allows us to represent each flag as an n-dimensional vector "
-                 "and perform cosine similarity searches against to find most similar flags given a query flag."),
+                 "have been featurised using pre-trained models such as **`DenseNet201`**, **`InceptionV3`**, "
+                 "**`ResNet152V2`**, **`VGG16`**, and **`Xception`**. The featurisation process allows us to represent "
+                 "each flag as an n-dimensional vector and perform cosine similarity searches to find most "
+                 "similar flags given a query flag."),
+    dcc.Markdown("Start by selecting a territory name from the dropdown list - The flags are returned "
+                 "in decreasing order of similarity. You can see the cosine distance (1-cosine similarity"
+                 "displayed next to the territory's name. The first flag in the returned results is the query flag you"
+                 "selected."
+                 ),
     html.Br(),
     html.Label('Select Territory:'),
     dcc.Dropdown(
