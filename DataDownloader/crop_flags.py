@@ -1,4 +1,7 @@
-
+"""
+Crop image to content - it is easier in our case since outside of the flag's dimensions the PNG is just a transparent
+layer - we use the `autocrop_image` function below to crop out unnecessary pixels from the input image.
+"""
 
 import os
 import logging

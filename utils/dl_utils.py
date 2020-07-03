@@ -37,6 +37,9 @@ def get_stylised_name_from_fpath(fpath:str)-> Tuple[str,str]:
     return base_name, territory_name
 
 class MySequence(Sequence):
+    """
+    Custom sequence class to feed images to models
+    """
 
     def __init__(self, img_fpaths_list: str ,batch_size: int =8, target_size: Tuple[int, int] = (256,256)
                 ,return_filenames: bool =False):

@@ -8,6 +8,7 @@ import PIL
 from utils.dl_utils import MySequence, get_bottleneck_features
 from glob import glob
 
+# All images are re-sized to 256x256
 IMG_HEIGHT=256
 IMG_WIDTH=256
 CHANNELS=3
@@ -58,7 +59,3 @@ if __name__=="__main__":
 
         features_df = get_bottleneck_features(data_seq, featuriser_model)
         features_df.to_csv(os.path.join(output_dir, f"{model_name}.csv"), header=True, index=True)
-
-
-
-

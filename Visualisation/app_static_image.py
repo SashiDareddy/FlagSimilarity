@@ -1,13 +1,14 @@
-import os
 import base64
-from io import BytesIO
 import logging
+from io import BytesIO
+from pprint import pprint
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-from pprint import pprint
-from Visualisation.utils import SimilaritySearch, get_image_grid
-from Visualisation.resize_images import THUMBNAIL_SIZE
+
+from resize_images import THUMBNAIL_SIZE
+from viz_utils import SimilaritySearch, get_image_grid
 
 # set-up state for performing similarity searches
 IMAGE_DATA_DIR = r"./thumbnails"
@@ -47,7 +48,7 @@ app.layout = html.Div([
     dcc.Markdown("Start by selecting a territory name from the dropdown list - The flags are returned "
                  "in decreasing order of similarity. You can see the cosine distance (1-cosine similarity"
                  "displayed next to the territory's name. The first flag in the returned results is the query flag you"
-                 "selected."
+                 " selected."
                  ),
     html.Br(),
     html.Label('Select Territory:'),
