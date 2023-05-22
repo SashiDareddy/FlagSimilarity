@@ -1,5 +1,5 @@
 dash_html_components==1.0.3
-requests==2.23.0
+requests==2.31.0
 pandas==0.25.3
 tqdm==4.42.1
 scikit_image==0.16.2
